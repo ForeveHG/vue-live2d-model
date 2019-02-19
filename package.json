@@ -1,0 +1,24 @@
+{
+  "name": "live2d-use-vue",
+  "version": "1.0.0",
+  "description": "live2d in vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForeveHG/live2d-use-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "live2d\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[vue\u001b[",
+    "\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
+  ],
+  "author": "SunJiaLi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ForeveHG/live2d-use-vue/issues"
+  },
+  "homepage": "https://github.com/ForeveHG/live2d-use-vue#readme"
+}
