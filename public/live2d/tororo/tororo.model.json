@@ -1,0 +1,29 @@
+{
+    "version": "Sample 1.0.0",
+    "model": "live2d/tororo/moc/tororo.moc",
+    "textures": ["live2d/tororo/moc/tororo.2048/texture_00.png"],
+    "pose": "live2d/tororo/tororo.pose.json",
+    "name": "tororo",
+    "motions": {
+        "idle": [{
+            "file": "live2d/tororo/mtn/00_idle.mtn"
+        }],
+        "": [{
+            "file": "live2d/tororo/mtn/01.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/02.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/03.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/04.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/05.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/06.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/07.mtn"
+        }, {
+            "file": "live2d/tororo/mtn/08.mtn"
+        }]
+    }
+}

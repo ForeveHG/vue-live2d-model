@@ -1,24 +1,47 @@
 {
-  "name": "live2d-use-vue",
-  "version": "1.0.0",
-  "description": "live2d in vue",
-  "main": "index.js",
+  "name": "vue-live2d-model",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ForeveHG/live2d-use-vue.git"
+  "dependencies": {
+    "vue": "^2.5.22"
   },
-  "keywords": [
-    "vue",
-    "live2d\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[vue\u001b[",
-    "\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
-  ],
-  "author": "SunJiaLi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ForeveHG/live2d-use-vue/issues"
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21"
   },
-  "homepage": "https://github.com/ForeveHG/live2d-use-vue#readme"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
