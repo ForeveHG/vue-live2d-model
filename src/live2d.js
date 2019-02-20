@@ -68,9 +68,11 @@ class Live2DVue {
         });
     }
 
-    init() {
+    init(isScale, VIEW_MAX_SCALE, VIEW_MIN_SCALE) {
         var width = this.canvas.width;
         var height = this.canvas.height;
+
+        this.isScale = isScale;
 
         this.dragMgr = new L2DTargetPoint();
 
@@ -89,8 +91,8 @@ class Live2DVue {
             LAppDefine.VIEW_LOGICAL_MAX_BOTTOM,
             LAppDefine.VIEW_LOGICAL_MAX_TOP);
 
-        this.viewMatrix.setMaxScale(LAppDefine.VIEW_MAX_SCALE);
-        this.viewMatrix.setMinScale(LAppDefine.VIEW_MIN_SCALE);
+        this.viewMatrix.setMaxScale(VIEW_MAX_SCALE);
+        this.viewMatrix.setMinScale(VIEW_MIN_SCALE);
 
         this.projMatrix = new L2DMatrix44();
         this.projMatrix.multScale(1, (width / height));
@@ -245,7 +247,7 @@ class Live2DVue {
     mouseEvent(e) {
         e.preventDefault();
 
-        if (e.type == "mousewheel") {
+        if (this.isScale && e.type == "mousewheel") {
             if (e.clientX < 0 || this.canvas.clientWidth < e.clientX ||
                 e.clientY < 0 || this.canvas.clientHeight < e.clientY) {
                 return;

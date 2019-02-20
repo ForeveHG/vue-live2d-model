@@ -1,14 +1,21 @@
 # vue-live2d-model
 
-## Project setup
+## 使用
 ```
-yarn install
+npm install vue-live2d-model
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+### 参数
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :------: | :------: | :------: | :------: | :------: |
+| width | 所占宽度 | Number | - | 512 |
+| height | 所占高度 | Number | - | 512 |
+| modelPath | 模型路径 | Array | - | [] |
+| order | 当前显示模型序号,对应modelPath的下标 | Number | - | 0 | 
+| isScale | 是否可以用鼠标滚轮缩放 | Boolean | true/false | true | 
+| maxScale | 最大缩放值 | Float |  
+| minScale | Number | 
 
 ### Compiles and minifies for production
 ```

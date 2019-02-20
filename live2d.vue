@@ -20,11 +20,11 @@ export default {
   props: {
     width: {
       type: Number,
-      default: 512
+      default: 350
     },
     height: {
       type: Number,
-      default: 512
+      default: 500
     },
     modelPath: {
       type: Array,
@@ -33,6 +33,22 @@ export default {
     order: {
       type: Number,
       default: 0
+    },
+    isScale: {
+      type: Boolean,
+      default: true,
+    },
+    defaultWidth: {
+      type: Number,
+      default: 2,
+    },
+    maxScale: {
+      type: Number,
+      default: 2
+    },
+    minScale: {
+      type: Number,
+      default: 0.6
     }
   },
   data() {
@@ -46,12 +62,12 @@ export default {
 
     this.model.initL2dCanvas();
 
-    this.model.init();
+    this.model.init(this.isScale, this.maxScale, this.minScale);
   },
   watch: {
     order() {
       var index = this.order % this.modelPath.length;
-      this.model.changeModel(index);
+      this.model.changeModel(index, this.defaultWidth);
     }
   }
 };

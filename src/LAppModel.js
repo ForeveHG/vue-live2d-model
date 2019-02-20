@@ -305,10 +305,9 @@ LAppModel.prototype.startMotion = function (name, no, priority) {
     // console.log("startMotion : " + name + " " + no + " " + priority);
 
     var motionName = this.modelSetting.getMotionFile(name, no);
-
     if (motionName == null || motionName == "") {
-        if (LAppDefine.DEBUG_LOG)
-            console.error("Failed to motion.");
+        // if (LAppDefine.DEBUG_LOG)
+        //     console.error("Failed to motion.");
         return;
     }
 

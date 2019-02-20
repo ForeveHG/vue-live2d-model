@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <button @click="handleChange">切换</button>
-    <vue-live2d :modelPath="modelPath" :order="order"></vue-live2d>
+    <vue-live2d :modelPath="modelPath" :order="order" :scale="true" :maxScale="2" :minScale="0.5"></vue-live2d>
   </div>
 </template>
 
