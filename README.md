@@ -30,8 +30,8 @@ export default {
 </script>
 ```
 
-注意：modelPath中的path值指的是live2d模型文件中的xxxx.mode.json，live2d模型文件如果放在放在服务器上，path值就是"http://域名/live2d/tororo/tororo.model.json"，vue-cli3.0构建的项目也可以放在public目录下，public目录下的文件打包时直接复制到根目录，不经过webpack，可以通过绝对路径引用，path的值就可以写
-"live2d/tororo/tororo.model.json"，可以参考example
+注意：modelPath中的path值指的是live2d模型文件中的xxxx.mode.json，live2d模型文件如果放在放在服务器上，path值就是```http://域名/live2d/tororo/tororo.model.json```，vue-cli3.0构建的项目也可以放在public目录下，public目录下的文件打包时直接复制到根目录，不经过webpack，可以通过绝对路径引用，path的值就可以写
+```live2d/tororo/tororo.model.json```，可以参考example
 
 ### 参数
 
