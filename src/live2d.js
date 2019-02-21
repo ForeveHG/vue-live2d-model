@@ -280,7 +280,7 @@ class Live2DVue {
 
         } else if (e.type == "contextmenu") {
 
-            this.changeModel();
+            // this.changeModel();
         }
     }
 

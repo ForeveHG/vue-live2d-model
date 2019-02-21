@@ -1,5 +1,10 @@
 <template>
-  <div id="app">
+  <div
+    class="live2d-wrap"
+    ref="live2d"
+    @mousedown="handleMouseDown"
+    @mouseup="handleMouseUp"
+  >
     <canvas
       id="glcanvas"
       :width="width"
@@ -28,7 +33,9 @@ export default {
     },
     modelPath: {
       type: Array,
-      default: []
+      default: function() {
+        return [];
+      }
     },
     order: {
       type: Number,
@@ -36,11 +43,15 @@ export default {
     },
     isScale: {
       type: Boolean,
-      default: true,
+      default: true
+    },
+    isMove: {
+      type: Boolean,
+      default: true
     },
     defaultWidth: {
       type: Number,
-      default: 2,
+      default: 2
     },
     maxScale: {
       type: Number,
@@ -53,7 +64,9 @@ export default {
   },
   data() {
     return {
-      model: null
+      model: null,
+      downX: 0,
+      downY: 0
     };
   },
   mounted() {
@@ -63,6 +76,28 @@ export default {
     this.model.initL2dCanvas();
 
     this.model.init(this.isScale, this.maxScale, this.minScale);
+  },
+  methods: {
+    handleMove(e) {
+      let live2d = this.$refs.live2d;
+      let { downX, downY } = this;
+      setTimeout(function() {
+        live2d.style.left = e.clientX - downX + "px";
+        live2d.style.top = e.clientY - downY + "px";
+      }, 30);
+    },
+    handleMouseDown(e) {
+      if (this.isMove && e.button == 2) {
+        this.downX = e.offsetX;
+        this.downY = e.offsetY;
+        document.addEventListener("mousemove", this.handleMove);
+      }
+    },
+    handleMouseUp(e) {
+      if (this.isMove && e.button == 2) {
+        document.removeEventListener("mousemove", this.handleMove);
+      }
+    }
   },
   watch: {
     order() {
@@ -74,4 +109,9 @@ export default {
 </script>
 
 <style>
+.live2d-wrap {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
 </style>

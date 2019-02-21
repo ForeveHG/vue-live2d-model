@@ -200,7 +200,6 @@ LAppModel.prototype.update = function () {
 
 
     if (this.mainMotionManager.isFinished()) {
-
         this.startRandomMotion(LAppDefine.MOTION_GROUP_IDLE, LAppDefine.PRIORITY_IDLE);
     }
 
@@ -321,7 +320,6 @@ LAppModel.prototype.startMotion = function (name, no, priority) {
 
     var thisRef = this;
     var motion;
-
     if (this.motions[name] == null) {
         this.loadMotion(null, this.modelHomeDir + motionName, function (mtn) {
             motion = mtn;

@@ -36,7 +36,6 @@ LAppLive2DManager.prototype.changeModel = function (gl, order) {
         // var no = parseInt(this.count % this.modelPath.length);
 
         var thisRef = this;
-        console.log(order,this.live.liveModel[order])
         var path = this.live.liveModel[order].path
 
         this.releaseModel(1, gl);
