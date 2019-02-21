@@ -1,9 +1,9 @@
 {
     "version": "Sample 1.0.0",
-    "model": "live2d/hijiki/moc/hijiki.moc",
-    "textures": ["live2d/hijiki/moc/hijiki.2048/texture_00.png"],
+    "model": "/live2d/hijiki/moc/hijiki.moc",
+    "textures": ["/live2d/hijiki/moc/hijiki.2048/texture_00.png"],
     "name": "hijiki",
-    "pose": "live2d/hijiki/hijiki.pose.json",
+    "pose": "/live2d/hijiki/hijiki.pose.json",
 	"hit_areas":
 	[
 		{"name":"head", "id":"D_REF.HEAD"},
@@ -11,37 +11,37 @@
 	],
     "motions": {
         "idle": [{
-            "file": "live2d/hijiki/mtn/00_idle.mtn"
+            "file": "/live2d/hijiki/mtn/00_idle.mtn"
         }],
         "tap_body": [{
-                "file": "live2d/haru/motions/tapBody_00.mtn",
-                "sound": "live2d/haru/sounds/tapBody_00.mp3"
+                "file": "/live2d/haru/motions/tapBody_00.mtn",
+                "sound": "/live2d/haru/sounds/tapBody_00.mp3"
             },
             {
-                "file": "live2d/haru/motions/tapBody_01.mtn",
-                "sound": "live2d/haru/sounds/tapBody_01.mp3"
+                "file": "/live2d/haru/motions/tapBody_01.mtn",
+                "sound": "/live2d/haru/sounds/tapBody_01.mp3"
             },
             {
-                "file": "live2d/haru/motions/tapBody_02.mtn",
-                "sound": "live2d/haru/sounds/tapBody_02.mp3"
+                "file": "/live2d/haru/motions/tapBody_02.mtn",
+                "sound": "/live2d/haru/sounds/tapBody_02.mp3"
             }
         ],
         "": [{
-            "file": "live2d/hijiki/mtn/01.mtn"
+            "file": "/live2d/hijiki/mtn/01.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/02.mtn"
+            "file": "/live2d/hijiki/mtn/02.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/03.mtn"
+            "file": "/live2d/hijiki/mtn/03.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/04.mtn"
+            "file": "/live2d/hijiki/mtn/04.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/05.mtn"
+            "file": "/live2d/hijiki/mtn/05.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/06.mtn"
+            "file": "/live2d/hijiki/mtn/06.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/07.mtn"
+            "file": "/live2d/hijiki/mtn/07.mtn"
         }, {
-            "file": "live2d/hijiki/mtn/08.mtn"
+            "file": "/live2d/hijiki/mtn/08.mtn"
         }]
     }
 }

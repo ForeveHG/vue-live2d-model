@@ -13,10 +13,10 @@ export default {
       order: 0,
       modelPath: [
         {
-          path: "live2d/tororo/tororo.model.json",
+          path: "/live2d/tororo/tororo.model.json",
         },
         {
-          path: "live2d/hijiki/hijiki.model.json",
+          path: "/live2d/hijiki/hijiki.model.json",
         }
       ]
     }

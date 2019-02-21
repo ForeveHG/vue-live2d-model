@@ -4,6 +4,7 @@
     ref="live2d"
     @mousedown="handleMouseDown"
     @mouseup="handleMouseUp"
+    @mouseout="handleMouseOut"
   >
     <canvas
       id="glcanvas"
@@ -86,6 +87,11 @@ export default {
         live2d.style.top = e.clientY - downY + "px";
       }, 30);
     },
+    handleOut(e) {
+      if (this.isMove && e.button == 2) {
+        document.removeEventListener("mousemove", this.handleMove);
+      }
+    },
     handleMouseDown(e) {
       if (this.isMove && e.button == 2) {
         this.downX = e.offsetX;
@@ -94,9 +100,10 @@ export default {
       }
     },
     handleMouseUp(e) {
-      if (this.isMove && e.button == 2) {
-        document.removeEventListener("mousemove", this.handleMove);
-      }
+      this.handleOut(e)
+    },
+    handleMouseOut(e){
+      this.handleOut(e)
     }
   },
   watch: {
