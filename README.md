@@ -21,7 +21,7 @@ export default {
     return {
       modelPath: [
         {
-          path: "live2d/tororo/tororo.model.json",
+          path: "/live2d/tororo/tororo.model.json",
         }
       ]
     }
@@ -31,7 +31,7 @@ export default {
 ```
 
 注意：modelPath中的path值指的是live2d模型文件中的xxxx.mode.json，live2d模型文件如果放在放在服务器上，path值就是```http://域名/live2d/tororo/tororo.model.json```，vue-cli3.0构建的项目也可以放在public目录下，public目录下的文件打包时直接复制到根目录，不经过webpack，可以通过绝对路径引用，path的值就可以写
-```live2d/tororo/tororo.model.json```，可以参考example.
+```/live2d/tororo/tororo.model.json```，记得加'/',可以参考example.
 
 ### 参数
 
@@ -42,9 +42,9 @@ export default {
 | modelPath | 模型路径数组 | Array | - | [] |
 | order | 当前显示模型序号,对应modelPath的下标 | Number | - | 0 | 
 | isScale | 是否可以用鼠标滚轮缩放 | Boolean | true/false | true | 
+| isMove | 点击鼠标右键移动模型 | Boolean | true/false | true |
 | maxScale | 最大缩放值 | Float | - | 2 |  
 | minScale | 最小缩放值 | Number | - | 0.6 |
-| isMove | 点击鼠标右键移动模型 | Boolean | true/false | true
 
 ### live2d模型
 [这个库](https://github.com/xiazeyu/live2d-widget-models)里有一些可以用的模型
