@@ -21,6 +21,7 @@ export default {
     return {
       modelPath: [
         {
+          order: 1,
           path: "/live2d/tororo/tororo.model.json",
         }
       ]
@@ -40,7 +41,7 @@ export default {
 | width | 所占宽度 | Number | - | 350 |
 | height | 所占高度 | Number | - | 500 |
 | modelPath | 模型路径数组 | Array | - | [] |
-| order | 当前显示模型序号,对应modelPath的下标 | Number | - | 0 | 
+| order | 当前显示模型的order,对应modelPath中某一项order值，如果order不存在，对应modelPath的下标值 | Number | - | 0 | 
 | isScale | 是否可以用鼠标滚轮缩放 | Boolean | true/false | true | 
 | isMove | 点击鼠标右键移动模型 | Boolean | true/false | true |
 | maxScale | 最大缩放值 | Float | - | 2 |  

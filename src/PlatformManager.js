@@ -12,7 +12,6 @@ import axios from 'axios'
 //============================================================
 //============================================================
 function PlatformManager(live) {
-    console.log('aaaabb',live)
     this.live = live
 }
 
@@ -32,21 +31,6 @@ PlatformManager.prototype.loadBytes = function (path /*String*/ , callback) {
                 break;
         }
     })
-    // var request = new XMLHttpRequest();
-    // request.open("GET", path, true);
-    // request.responseType = "arraybuffer";
-    // request.onload = function () {
-    //     switch (request.status) {
-    //         case 200:
-    //             callback(request.response);
-    //             break;
-    //         default:
-    //             console.error("Failed to load (" + request.status + ") : " + path);
-    //             break;
-    //     }
-    // }
-    // request.send(null);
-    //return request;
 }
 
 //============================================================

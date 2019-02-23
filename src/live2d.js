@@ -62,13 +62,9 @@ class Live2DVue {
             canvas.addEventListener("touchend", this.touchEvent.bind(this), false);
             canvas.addEventListener("touchmove", this.touchEvent.bind(this), false);
         }
-
-        this.changeBtn && this.changeBtn.addEventListener("click", function (e) {
-            that.changeModel();
-        });
     }
 
-    init(isScale, VIEW_MAX_SCALE, VIEW_MIN_SCALE) {
+    init(isScale, VIEW_MAX_SCALE, VIEW_MIN_SCALE, index) {
         var width = this.canvas.width;
         var height = this.canvas.height;
 
@@ -112,7 +108,7 @@ class Live2DVue {
 
         this.gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
-        this.changeModel();
+        this.changeModel(index);
 
         this.startDraw();
     }
@@ -168,11 +164,13 @@ class Live2DVue {
     }
 
     changeModel(order) {
-        var index = order || 0
-        this.isModelShown = false;
-        this.live2DMgr.reloadFlg = true;
-        this.live2DMgr.count++;
-        this.live2DMgr.changeModel(this.gl, index);
+        if (typeof order === 'number' && order > -1) {
+            var index = order || 0
+            this.isModelShown = false;
+            this.live2DMgr.reloadFlg = true;
+            this.live2DMgr.count++;
+            this.live2DMgr.changeModel(this.gl, index);
+        }
     }
 
     modelScaling(scale) {
@@ -247,11 +245,11 @@ class Live2DVue {
     mouseEvent(e) {
         e.preventDefault();
 
-        if (this.isScale && e.type == "mousewheel") {
-            if (e.clientX < 0 || this.canvas.clientWidth < e.clientX ||
-                e.clientY < 0 || this.canvas.clientHeight < e.clientY) {
-                return;
-            }
+        if (e.type == "mousewheel") {
+            // if (e.clientX < 0 || this.canvas.clientWidth < e.clientX ||
+            //     e.clientY < 0 || this.canvas.clientHeight < e.clientY) {
+            //     return;
+            // }
 
             if (e.wheelDelta > 0) this.modelScaling(1.1);
             else this.modelScaling(0.9);

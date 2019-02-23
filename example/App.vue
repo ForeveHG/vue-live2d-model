@@ -1,32 +1,18 @@
 <template>
   <div id="app">
-    <button @click="handleChange">切换</button>
-    <vue-live2d :modelPath="modelPath" :order="order" :scale="true" :maxScale="2" :minScale="0.5"></vue-live2d>
+    <example-one></example-one>
+    <!-- <example-two></example-two> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data() {
-    return {
-      order: 0,
-      modelPath: [
-        {
-          path: "/live2d/tororo/tororo.model.json",
-        },
-        {
-          path: "/live2d/hijiki/hijiki.model.json",
-        }
-      ]
-    }
-  },
-  methods: {
-    handleChange() {
-      this.order += 1
-    }
+  name: "app",
+  components: {
+    exampleOne: () => import('./example1'),
+    exampleTwo: () => import('./example2')
   }
-}
+};
 </script>
 
 <style>

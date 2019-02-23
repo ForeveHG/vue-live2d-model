@@ -40,7 +40,7 @@ export default {
     },
     order: {
       type: Number,
-      default: 0
+      default: -1
     },
     isScale: {
       type: Boolean,
@@ -49,10 +49,6 @@ export default {
     isMove: {
       type: Boolean,
       default: true
-    },
-    defaultWidth: {
-      type: Number,
-      default: 2
     },
     maxScale: {
       type: Number,
@@ -75,10 +71,21 @@ export default {
     this.model = new Live2DVue(canvas, this.modelPath);
 
     this.model.initL2dCanvas();
-
     this.model.init(this.isScale, this.maxScale, this.minScale);
+    this.handleChangeModel(this.order)
   },
   methods: {
+    getIndex(order) {
+      if (this.modelPath[0].order) {
+        var index = 0;
+        this.modelPath.forEach((m, i) => {
+          if (m.order == order) index = i;
+        });
+        return index;
+      } else {
+        return order % this.modelPath.length;
+      }
+    },
     handleMove(e) {
       let live2d = this.$refs.live2d;
       let { downX, downY } = this;
@@ -100,16 +107,18 @@ export default {
       }
     },
     handleMouseUp(e) {
-      this.handleOut(e)
+      this.handleOut(e);
     },
-    handleMouseOut(e){
-      this.handleOut(e)
+    handleMouseOut(e) {
+      this.handleOut(e);
+    },
+    handleChangeModel(order) {
+      this.model.changeModel(this.getIndex(order));
     }
   },
   watch: {
     order() {
-      var index = this.order % this.modelPath.length;
-      this.model.changeModel(index, this.defaultWidth);
+       this.handleChangeModel(this.order)
     }
   }
 };
@@ -120,5 +129,6 @@ export default {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 9999;
 }
 </style>
