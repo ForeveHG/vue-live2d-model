@@ -50,6 +50,10 @@ export default {
       type: Boolean,
       default: true
     },
+    defaultScale: {
+      type: Number,
+      default: 2
+    },
     maxScale: {
       type: Number,
       default: 2
@@ -113,7 +117,7 @@ export default {
       this.handleOut(e);
     },
     handleChangeModel(order) {
-      this.model.changeModel(this.getIndex(order));
+      this.model.changeModel(this.getIndex(order), this.defaultScale);
     }
   },
   watch: {

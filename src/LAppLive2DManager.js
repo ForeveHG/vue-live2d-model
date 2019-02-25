@@ -29,7 +29,7 @@ LAppLive2DManager.prototype.createModel = function () {
 }
 
 
-LAppLive2DManager.prototype.changeModel = function (gl, index) {
+LAppLive2DManager.prototype.changeModel = function (gl, index, defaultScale) {
     // console.log("--> LAppLive2DManager.update(gl)");
     if (this.reloadFlg) {
         this.reloadFlg = false;
@@ -41,7 +41,48 @@ LAppLive2DManager.prototype.changeModel = function (gl, index) {
         this.releaseModel(1, gl);
         this.releaseModel(0, gl);
         this.createModel();
-        this.models[0].load(gl, path);
+        this.models[0].load(gl, path, null, defaultScale);
+        // switch (no) {
+        //     case 0:
+        //         this.releaseModel(1, gl);
+        //         this.releaseModel(0, gl);
+
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_HARU);
+        //         break;
+        //     case 1:
+        //         this.releaseModel(0, gl);
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_SHIZUKU);
+        //         break;
+        //     case 2:
+        //         this.releaseModel(0, gl);
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_WANKO);
+        //         break;
+        //     case 3:
+        //         this.releaseModel(0, gl);
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_EPSILON);
+        //         break;
+        //     case 4:
+        //         this.releaseModel(0, gl);
+        //         // 一体目のモデル
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_HARU_A, function () {
+        //             // 二体目のモデル
+        //             thisRef.createModel();
+        //             thisRef.models[1].load(gl, LAppDefine.MODEL_HARU_B);
+        //         });
+        //         break;
+        //     case 5:
+        //         this.releaseModel(0, gl);
+        //         this.createModel();
+        //         this.models[0].load(gl, LAppDefine.MODEL_HIJIKI);
+        //         break;
+        //     default:
+        //         break;
+        // }
     }
 };
 

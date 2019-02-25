@@ -25,10 +25,10 @@ function LAppModel() {
 LAppModel.prototype = new L2DBaseModel();
 
 
-LAppModel.prototype.load = function (gl, modelSettingPath, callback) {
+LAppModel.prototype.load = function (gl, modelSettingPath, callback, defaultScale) {
     this.setUpdating(true);
     this.setInitialized(false);
-
+    console.log('defaultScale',defaultScale)
     // this.modelHomeDir = modelSettingPath.substring(0, modelSettingPath.lastIndexOf("/") + 1);
 
     this.modelSetting = new ModelSettingJson();
@@ -156,7 +156,7 @@ LAppModel.prototype.load = function (gl, modelSettingPath, callback) {
                     }
                 });
             }
-        });
+        }, defaultScale);
     });
 };
 

@@ -163,13 +163,13 @@ class Live2DVue {
         MatrixStack.pop();
     }
 
-    changeModel(order) {
+    changeModel(order, defaultScale) {
         if (typeof order === 'number' && order > -1) {
             var index = order || 0
             this.isModelShown = false;
             this.live2DMgr.reloadFlg = true;
             this.live2DMgr.count++;
-            this.live2DMgr.changeModel(this.gl, index);
+            this.live2DMgr.changeModel(this.gl, index, defaultScale);
         }
     }
 

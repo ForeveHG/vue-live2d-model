@@ -8,6 +8,7 @@
       :scale="true"
       :maxScale="2"
       :minScale="0.5"
+      :defaultScale="1.5"
     ></vue-live2d>
   </div>
 </template>
