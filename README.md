@@ -44,9 +44,9 @@ export default {
 | order | 当前显示模型的order,对应modelPath中某一项order值，如果order不存在，对应modelPath的下标值 | Number | - | 0 | 
 | isScale | 是否可以用鼠标滚轮缩放 | Boolean | true/false | true | 
 | isMove | 点击鼠标右键移动模型 | Boolean | true/false | true |
-| maxScale | 最大缩放值 | Float | - | 2 |  
-| minScale | 最小缩放值 | Float | - | 0.6 |
-| defaultScale | 初始时的宽度比 | Float | - | 2 | 
+| maxScale | 最大缩放值 | Number | - | 2 |  
+| minScale | 最小缩放值 | Number | - | 0.6 |
+| defaultScale | 初始时的宽度比 | Number | - | 2 | 
 
 ### live2d模型
 [这个库](https://github.com/xiazeyu/live2d-widget-models)里有一些可以用的模型
