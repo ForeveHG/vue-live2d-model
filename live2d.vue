@@ -3,8 +3,6 @@
     class="live2d-wrap"
     ref="live2d"
     @mousedown="handleMouseDown"
-    @mouseup="handleMouseUp"
-    @mouseleave="handleMouseOut"
   >
     <canvas
       id="glcanvas"
@@ -72,11 +70,15 @@ export default {
   },
   mounted() {
     var canvas = document.getElementById("glcanvas");
+    var self = this;
     this.model = new Live2DVue(canvas, this.modelPath);
 
     this.model.initL2dCanvas();
     this.model.init(this.isScale, this.maxScale, this.minScale);
     this.handleChangeModel(this.order)
+    document.addEventListener("mouseup", function(e) {
+      self.handleOut(e);
+    })
   },
   methods: {
     getIndex(order) {
@@ -109,12 +111,6 @@ export default {
         this.downY = e.offsetY;
         document.addEventListener("mousemove", this.handleMove);
       }
-    },
-    handleMouseUp(e) {
-      this.handleOut(e);
-    },
-    handleMouseOut(e) {
-      this.handleOut(e);
     },
     handleChangeModel(order) {
       this.model.changeModel(this.getIndex(order), this.defaultScale);
