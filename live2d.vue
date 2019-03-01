@@ -4,7 +4,7 @@
     ref="live2d"
     @mousedown="handleMouseDown"
     @mouseup="handleMouseUp"
-    @mouseout="handleMouseOut"
+    @mouseleave="handleMouseOut"
   >
     <canvas
       id="glcanvas"
