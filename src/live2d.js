@@ -174,22 +174,26 @@ class Live2DVue {
     }
 
     modelScaling(scale) {
-        var isMaxScale = this.viewMatrix.isMaxScale();
-        var isMinScale = this.viewMatrix.isMinScale();
-
-        this.viewMatrix.adjustScale(0, 0, scale);
-
-
-        if (!isMaxScale) {
-            if (this.viewMatrix.isMaxScale()) {
-                this.live2DMgr.maxScaleEvent();
+        if (this.isScale == true){
+            var isMaxScale = this.viewMatrix.isMaxScale();
+            var isMinScale = this.viewMatrix.isMinScale();
+    
+            this.viewMatrix.adjustScale(0, 0, scale);
+    
+    
+            if (!isMaxScale) {
+                if (this.viewMatrix.isMaxScale()) {
+                    this.live2DMgr.maxScaleEvent();
+                }
             }
-        }
-
-        if (!isMinScale) {
-            if (this.viewMatrix.isMinScale()) {
-                this.live2DMgr.minScaleEvent();
+    
+            if (!isMinScale) {
+                if (this.viewMatrix.isMinScale()) {
+                    this.live2DMgr.minScaleEvent();
+                }
             }
+        }else{
+            console.log('滚动缩放已被关闭')
         }
     }
 
